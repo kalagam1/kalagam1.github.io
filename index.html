@@ -23,6 +23,9 @@
     Determined computer science student with a strong interest in cybersecurity, seeking a role as a Cybersecurity Analyst. Experienced in collaborating on research projects, developing web applications, and showcasing leadership through event coordination. With proven project management and programming skills, eager to enhance digital security, reduce cyber threats by 14%, and protect organizational assets to improve profitability.
   </p>
   <hr />
+<h2>Random Joke</h2>
+<p><em>This content is provided by a third-party (JokeAPI). I am not responsible for the joke contents below.</em></p>
+<p id="jokeBox">Loading joke...</p>
   <h2>Education</h2>
   <ul>
     <li><strong>University of Dayton</strong> – MS in Computer Science (GPA: 3)<br>August 2024 – May 2026</li>
@@ -62,9 +65,49 @@
     <li>AWS Certified Cloud Practitioner</li>
   </ul>
   <hr />
+  <h2>Daily Comic</h2>
+<p><em>This comic is fetched from the public XKCD API. I do not own or control this content.</em></p>
+<img id="comicImg" src="" alt="XKCD Comic" style="max-width:100%;">
+<p id="comicTitle"></p>
   <div class="text-center">
     <img src="https://s11.flagcounter.com/count2/YOURCODE/bg_FFFFFF/txt_000000/border_CCCCCC/columns_4/maxflags_12/viewers_3/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter">
   </div>
 </div>
+  <script>
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
+  function setCookie(name, value, days) {
+    const expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+  }
+
+  window.onload = function () {
+    const lastVisit = getCookie("lastVisit");
+    const now = new Date().toLocaleString();
+
+    if (!lastVisit) {
+      alert("Welcome to my homepage for the first time!");
+    } else {
+      alert("Welcome back! Your last visit was " + lastVisit);
+    }
+
+    setCookie("lastVisit", now, 365); 
+  };
+</script>
+<script>
+  fetch("https://xkcd.now.sh/?comic=random")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("comicImg").src = data.img;
+      document.getElementById("comicTitle").innerText = data.title;
+    })
+    .catch(err => {
+      document.getElementById("comicTitle").innerText = "Failed to load comic.";
+    });
+</script>
 </body>
 </html>
