@@ -134,16 +134,16 @@
       });
   </script>
   <script>
-    fetch("https://xkcd.com/info.0.json")
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById("comicImg").src = data.img;
-        document.getElementById("comicTitle").innerText = data.title;
-      })
-      .catch(err => {
-        document.getElementById("comicTitle").innerText = "Failed to load comic.";
-      });
-  </script>
+  fetch("https://api.allorigins.win/raw?url=https://xkcd.com/info.0.json")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("comicImg").src = data.img;
+      document.getElementById("comicTitle").innerText = data.title;
+    })
+    .catch(err => {
+      document.getElementById("comicTitle").innerText = "Failed to load comic.";
+    });
+</script>
 </div>
 </body>
 </html>
