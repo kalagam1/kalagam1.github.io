@@ -16,155 +16,136 @@
   <div class="jumbotron text-center">
     <img src="mahi.jpg" alt="Headshot" class="profile-pic">
     <h1>Mahitha Kalaga</h1>
-   <div id="email" onclick="showhideEmail()">Show my email</div>
-	<script src="email.js"></script><br>
-	  <p> | Phone: 937-4769-392</p>
+    <div id="email" onclick="showhideEmail()">Show my email</div>
+    <script src="email.js"></script><br>
+    <p> | Phone: 937-4769-392</p>
     <div id="digit-clock"></div>
-	<canvas id="analog-clock" width="150" height="150" style="background-color: #999"></canvas>
-	<script src="https://waph-phung.github.io/clock.js"></script>
-	<script>
-		function displayTime() {
-			document.getElementById('digit-clock').innerHTML="Current Time: " + new Date();
-		}
-		setInterval(displayTime, 500);
-		var canvas = document.getElementById("analog-clock");
-		var ctx =  canvas.getContext("2d");
-		var radius = canvas.height / 2;
-		ctx.translate(radius, radius);
-		setInterval(drawClock, 1000);
-		function drawClock(){
-			drawFace(ctx, radius);
-			drawNumbers(ctx, radius);
-			drawTime(ctx, radius);
-		}
-	</script>
-	</div>
-    <p><a href="MahithaKalaga_Resume.pdf" target="_blank">View Resume</a> | <a href="waph.html">WAPH Course</a></p>
+    <canvas id="analog-clock" width="150" height="150" style="background-color: #999"></canvas>
+    <script src="https://waph-phung.github.io/clock.js"></script>
+    <script>
+      function displayTime() {
+        document.getElementById('digit-clock').innerHTML = "Current Time: " + new Date();
+      }
+      setInterval(displayTime, 500);
+      var canvas = document.getElementById("analog-clock");
+      var ctx = canvas.getContext("2d");
+      var radius = canvas.height / 2;
+      ctx.translate(radius, radius);
+      setInterval(drawClock, 1000);
+      function drawClock() {
+        drawFace(ctx, radius);
+        drawNumbers(ctx, radius);
+        drawTime(ctx, radius);
+      }
+    </script>
   </div>
+
+  <p><a href="MahithaKalaga_Resume.pdf" target="_blank">View Resume</a> | <a href="waph.html">WAPH Course</a></p>
+
   <p class="lead">
-    Determined computer science student with a strong interest in cybersecurity, seeking a role as a Cybersecurity Analyst. Experienced in collaborating on research projects, developing web applications, and showcasing leadership through event coordination. With proven project management and programming skills, eager to enhance digital security, reduce cyber threats by 14%, and protect organizational assets to improve profitability.
+    Determined computer science student with a strong interest in cybersecurity, seeking a role as a Cybersecurity Analyst...
   </p>
   <hr />
-<h2>Random Joke</h2>
-<p><em>This content is provided by a third-party (JokeAPI). I am not responsible for the joke contents below.</em></p>
-<p id="jokeBox">Loading joke...</p>
+
+  <h2>Random Joke</h2>
+  <p><em>This content is provided by a third-party (JokeAPI). I am not responsible for the joke contents below.</em></p>
+  <p id="jokeBox">Loading joke...</p>
+
   <h2>Education</h2>
   <ul>
     <li><strong>University of Dayton</strong> – MS in Computer Science (GPA: 3)<br>August 2024 – May 2026</li>
     <li><strong>KL University</strong> – B.Tech in Computer Science and Engineering (GPA: 8.92)<br>August 2020 – May 2024</li>
   </ul>
   <hr />
+
   <h2>Experience</h2>
   <ul>
-    <li><strong>Software Developer Intern – Microsoft</strong><br>Jan 2024 – Mar 2024<br>
-      Contributed to Azure services, cloud deployment speed (20%), security compliance (25%), and cost optimization (15%).
-    </li>
-    <li><strong>Cybersecurity Intern – KL University</strong><br>Mar 2023 – May 2023<br>
-      Used Kali Linux, Wireshark, and Maltego for threat analysis and vulnerability testing.
-    </li>
+    <li><strong>Software Developer Intern – Microsoft</strong><br>Jan 2024 – Mar 2024...</li>
+    <li><strong>Cybersecurity Intern – KL University</strong><br>Mar 2023 – May 2023...</li>
   </ul>
   <hr />
+
   <h2>Skills</h2>
   <h4>Languages & Tools</h4>
-  <ul>
-    <li>Java, Python, C, C++, React, Node.js, HTML, CSS, JavaScript, SQL</li>
-  </ul>
+  <ul><li>Java, Python, C, C++, React, Node.js, HTML, CSS, JavaScript, SQL</li></ul>
   <h4>Cybersecurity & Other Tools</h4>
-  <ul>
-    <li>Kali Linux, Wireshark, DVWA, Maltego, MS Office, Fusion 360, Arduino</li>
-  </ul>
+  <ul><li>Kali Linux, Wireshark, DVWA, Maltego, MS Office, Fusion 360, Arduino</li></ul>
   <hr />
+
   <h2>Projects</h2>
-                            <h3 class="mb-0">Secure Blogging Platform with Role-Based Access (MiniFacebook)</h3>
-                            <div class="subheading mb-3" style="color: #000000;">University of Dayton</div>
-                            <p style="color: #000000;">Developed a secure blogging platform in PHP/MySQL with superuser/user separation and content moderation.
-Integrated defenses for CSRF, XSS, SQL injection, and implemented secure password hashing and session handling.
-Included real-time chat via WebSockets and user management features (enable/disable users).</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">January 2025 - May 2025</span></div>
-                    </div>
-                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Secure Chat System using Go and Node.js</h3>
-                            <div class="subheading mb-3" style="color: #000000;">University of Dayton</div>
-                            <p style="color: #000000;">Built a secure multi-user chat system with TCP-based backend in Go and client in Node.js.
-Implemented authentication, public/private messaging, and real-time user list updates.
-Authenticated users only; non-authenticated users blocked from communication.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">January 2025 - May 2025</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Reserach Assistant</h3>
-                            <div class="subheading mb-3" style="color: #000000;">KL University</div>
-                            <p style="color: #000000;">Collaborated on publishing a research paper on bronchopneumonia detection using convolutional neural networks. Developed a healthcare and well-being web application using the MERN stack, incorporating React, HTML, CSS, and JavaScript for frontend functionality while efficiently managing backend data storage. Designed an ATM banking system as a Java project to perform operations on quadratic expressions using a stack data structure. Additionally, created a bot utilizing the Blue Prism automation tool to convert XML files into Excel files, streamlining data processing.</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2020 - May 2024</span></div>
-                    </div>  
+  <h3>Secure Blogging Platform with Role-Based Access</h3>
+  <p>PHP/MySQL blog platform with CSRF, XSS, SQLi protections. Includes WebSockets chat, secure session handling.</p>
+
+  <h3>Secure Chat System using Go and Node.js</h3>
+  <p>Real-time chat system with user auth and TCP back-end in Go.</p>
+
+  <h3>Research Assistant – KL University</h3>
+  <p>Worked on CNN-based health detection, MERN stack app, ATM Java project, and Blue Prism automation bot.</p>
   <hr />
+
   <h2>Certifications</h2>
   <ul>
     <li>Microsoft Certified: Azure Fundamentals</li>
-    <li>EX-183 Red Hat Certified Enterprise Application Developer</li>
-    <li>AWS Certified Solutions Architect – Associate</li>
-    <li>AWS Certified Cloud Practitioner</li>
+    <li>EX-183 Red Hat Certified Developer</li>
+    <li>AWS Solutions Architect – Associate</li>
+    <li>AWS Cloud Practitioner</li>
   </ul>
   <hr />
+
   <h2>Daily Comic</h2>
-<p><em>This comic is fetched from the public XKCD API. I do not own or control this content.</em></p>
-<img id="comicImg" src="" alt="XKCD Comic" style="max-width:100%;">
-<p id="comicTitle"></p>
+  <p><em>This comic is fetched from the public XKCD API. I do not own or control this content.</em></p>
+  <img id="comicImg" src="" alt="XKCD Comic" style="max-width:100%;">
+  <p id="comicTitle"></p>
+
   <div class="text-center">
     <img src="https://s11.flagcounter.com/count2/YOURCODE/bg_FFFFFF/txt_000000/border_CCCCCC/columns_4/maxflags_12/viewers_3/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter">
   </div>
-	
+
+  <!-- Cookies: First-time visit message -->
   <script>
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
-
-  function setCookie(name, value, days) {
-    const expires = new Date(Date.now() + days * 864e5).toUTCString();
-    document.cookie = `${name}=${value}; expires=${expires}; path=/`;
-  }
-
-  window.onload = function () {
-    const lastVisit = getCookie("lastVisit");
-    const now = new Date().toLocaleString();
-
-    if (!lastVisit) {
-      alert("Welcome to my homepage for the first time!");
-    } else {
-      alert("Welcome back! Your last visit was " + lastVisit);
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
     }
 
-    setCookie("lastVisit", now, 365); 
-  };
-</script>
-<script>
-  fetch("https://xkcd.now.sh/?comic=random")
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById("comicImg").src = data.img;
-      document.getElementById("comicTitle").innerText = data.title;
-    })
-    .catch(err => {
-      document.getElementById("comicTitle").innerText = "Failed to load comic.";
-    });
-  $.get("https://v2.jokeapi.dev/joke/Programming?type=single", 
-	 	function(result){
-	 		console.log("From jokeAPI: " + JSON.stringify(result));
-	 		$("#response").html("A Programming Joke of The Day: " + result.joke);
-	 	})
-		(async function jokeAPIfetch(){
-		const jokeAPI_res =  await fetch("https://v2.jokeapi.dev/joke/Programming?type=single");
-		const result = await jokeAPI_res.json();
-		("#response").html("A programming joke of the day: " + result.joke);
-		})()
-</script>
-	
-	</div>
+    function setCookie(name, value, days) {
+      const expires = new Date(Date.now() + days * 864e5).toUTCString();
+      document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+    }
+
+    window.onload = function () {
+      const lastVisit = getCookie("lastVisit");
+      const now = new Date().toLocaleString();
+      if (!lastVisit) {
+        alert("Welcome to my homepage for the first time!");
+      } else {
+        alert("Welcome back! Your last visit was " + lastVisit);
+      }
+      setCookie("lastVisit", now, 365);
+    };
+  </script>
+  <script>
+    fetch("https://v2.jokeapi.dev/joke/Programming?type=single")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("jokeBox").innerText = "A programming joke of the day: " + data.joke;
+      })
+      .catch(err => {
+        document.getElementById("jokeBox").innerText = "Failed to load joke.";
+      });
+  </script>
+  <script>
+    fetch("https://xkcd.com/info.0.json")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("comicImg").src = data.img;
+        document.getElementById("comicTitle").innerText = data.title;
+      })
+      .catch(err => {
+        document.getElementById("comicTitle").innerText = "Failed to load comic.";
+      });
+  </script>
+</div>
 </body>
 </html>
