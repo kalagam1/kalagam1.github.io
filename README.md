@@ -12,7 +12,7 @@
 
 ## Repository Information
 
-Repository's URL: [https://github.com/kalagam1/waph-kalagam1.git](https://github.com/kalagam1/waph-kalagam1.git)
+Repository's URL: [https://github.com/kalagam1/kalagam1.github.io](https://github.com/kalagam1/kalagam1.github.io)
 
 This is a private repository for Mahitha Kalaga to store all the code from the course. The organization of this repository is as follows.
 
@@ -38,7 +38,7 @@ This is a private repository for Mahitha Kalaga to store all the code from the c
 
 This project involved creating and deploying a professional profile website on GitHub Pages as part of the "Web Application Programming and Hacking" course. The website showcases my education, experiences, technical skills, and cybersecurity interests. Key features include the use of Bootstrap, JavaScript-based interactions, public API integrations, and a dedicated page introducing the WAPH course with related lab and project work.
 
-Project's URL: [Project 1](https://github.com/kalagam1/kalagam1.github.io)
+Project's URL: [Project 1](https://kalagam1.github.io)
 
 ## Task 1: General requirements
 
