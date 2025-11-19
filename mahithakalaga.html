@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Mahitha Kalaga Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <style>
+      #portfolio-cat {
+    position: fixed; 
+    top: 50%; 
+    right: 20px; 
+    transform: translateY(-50%);
+    width: 200px; /* Increased cat size slightly from 90px to 100px */
+    height: auto;
+    z-index: 1000; 
+    transition: opacity 0.3s ease-in-out;
+}
+
+#speech-bubble {
+    position: absolute;
+    top: -35px; /* Adjust if needed to align with new cat size */
+    right: 110px; /* Adjust to align with new cat size */
+    background-color: #f8f9fa; 
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 6px 10px; /* Reduced padding */
+    font-size: 13px; /* Reduced font size from 14px to 13px */
+    color: #333;
+    white-space: nowrap; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the arrow also adjusts if the bubble position changes */
+#speech-bubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10px; 
+    border-width: 8px 0 8px 10px; /* Adjusted arrow size */
+    border-style: solid;
+    border-color: transparent transparent transparent #000000;
+    transform: translateY(-50%);
+}
+
+#speech-bubble::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -9px; 
+    border-width: 8px 0 8px 10px; /* Adjusted arrow size */
+    border-style: solid;
+    border-color: transparent transparent transparent #f8f9fa;
+    transform: translateY(-50%);
+}
+/* NEW: Styles for the dynamic elements */
+
+/* Container for paw prints, positioned behind content */
+#paw-print-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999; /* Below the cat, above the main content */
+    pointer-events: none; /* Allows user to click through to the page */
+}
+
+/* Style for individual paw prints */
+.paw-print {
+    position: absolute;
+    width: 20px; /* Adjust size to match the cat */
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0; /* Start invisible */
+    transition: opacity 3s ease-out; /* Fades out over 3 seconds */
+}
+        </style>
+
+    </head>
+    <body id="page-top">
+        
+        <div id="portfolio-cat">
+            <div id="speech-bubble">Hi there! Welcome to my portfolio.</div>
+            <img src="cat-mascot.png" alt="Waving Cat Mascot" style="width: 100%;" />
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">Mahitha Kalaga</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="mahi.jpg" alt="..." /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#certifications">Certifications</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid p-0">
+            <section class="resume-section" id="about">
+    <div class="resume-section-content">
+        <h1 class="mb-0">
+            Mahitha
+            <span class="text-primary">Kalaga</span>
+        </h1>
+        <div class="subheading mb-5" style="color: #000000;">
+             Dayton, OH 45429 · (937) 476-9392 ·
+            <a href="mailto:kalagam1@udayton.edu">Drop a message here!</a>
+        </div>
+
+        <div class="d-flex align-items-center">
+            <div class="social-icons me-4">
+                <a class="social-icon" href="https://www.linkedin.com/in/mahitha-kalaga/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <div>
+                <button class="btn btn-sm btn-outline-dark" onclick="toggleWordGame()">🎯 Play Word Game</button>
+                <div id="wordGameBox" style="display:none; margin-top: 10px;">
+                    <p style="font-size: 14px;">Guess a word from my **skills section**!</p>
+                    <p id="maskedWord" style="font-size: 20px; letter-spacing: 6px; font-weight: bold;"></p>
+                    <input type="text" id="letterInput" maxlength="1" placeholder="Type a letter" style="width: 80px;" />
+                    <button onclick="guessLetter()">Try</button>
+                    <p id="wordMessage" style="font-size: 13px; margin-top: 5px;"></p>
+                    <p id="guessedLetters" style="font-size: 12px; margin-top: 5px;"></p>
+                    <button id="newWordBtn" onclick="startNewWordGame()" style="display:none; margin-top: 5px;">🔁 New Word</button>
+                </div>
+            </div>
+        </div>
+
+        <p class="mb-0" style="color: #000000;">
+        As a cybersecurity-driven Computer Science graduate student at the University of Dayton, I specialize in building secure, scalable systems and defending digital environments against evolving threats. My academic foundation, including a Bachelor's degree from KL University, is reinforced by practical experience. As a Cybersecurity Intern, I contributed to incident documentation and supported risk assessment, reducing system exposure by 25%. My work leverages a strong command of security principles (Access Controls, Incident Response) and tools like Wireshark and Kali Linux to ensure system integrity and resilience
+        </p>
+
+        <p style="color: #000000; font-weight: 500;">
+            Current time: <span id="clock"></span>
+        </p>
+    </div>
+</section>
+
+<hr class="m-0" />
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5" style="color: #000000;">Education</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0" style="color: #000000;">University of Dayton</h3>
+                            <div class="subheading mb-3" style="color: #000000;">Masters in Computer Science</div>
+                            <p style="color: #000000;">GPA: 3.36</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2024 - May 2026</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0" style="color: #000000;">KL University</h3>
+                            <div class="subheading mb-3" style="color: #000000;">Bacherlors in Computer Science and Engineering</div>
+                            <p style="color: #000000;">GPA: 8.92</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2020 - May 2024</span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <section class="resume-section" id="experience">
+                <div class="resume-section-content">
+                    <h2 class="mb-5" style="color: #000000;">Experience</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0" style="color: #000000;">Cyber security Intern</h3>
+                            <div class="subheading mb-3" style="color: #000000;">KL University</div>
+                            <p style="color: #000000;">During this internship, I significantly contributed to strengthening system security protocols. 
+                            My core responsibilities included monitoring and analyzing network traffic using Wireshark to proactively detect potential vulnerabilities and anomalies.
+                            I supported risk assessment reports and conducted vulnerability scans for internal systems.
+                            Furthermore, I assisted in incident documentation, software patching, and remediation efforts, which collectively reduced system exposure by 25%. 
+                            I was also responsible for maintaining security procedures, configuring endpoints, and managing user access within secure lab networks</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">May 2022 - May 2023</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Reserach Assistant</h3>
+                            <div class="subheading mb-3" style="color: #000000;">KL University</div>
+                            <p style="color: #000000;">As a Research Assistant, I focused on securing and optimizing deep learning applications for medical diagnostics. 
+                            I implemented robust access control and encryption techniques to secure sensitive medical datasets, successfully reducing their exposure by 30%.
+                            I automated complex preprocessing pipelines using Python, enhancing model accuracy by 25%. 
+                            My efforts also included optimizing deep learning models on chest X-ray datasets, which lowered false positive rates by 25% , and managing research infrastructure, storage, and backup procedures. I also provided essential technical support for lab systems, resolving data, compute, and code issues for research teams.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2020 - May 2024</span></div>
+                    </div>  
+                </div>
+            </section>
+            <hr class="m-0" />
+            <section class="resume-section" id="projects">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Projects</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Secure Blogging Platform with Role-Based Access (MiniFacebook)</h3>
+                            <div class="subheading mb-3" style="color: #000000;">University of Dayton</div>
+                            <p style="color: #000000;">Developed a full-featured blogging platform with a strong focus on defensive programming and access control. 
+                            I designed and implemented role-based access control and secure password hashing, effectively reducing unauthorized access attempts by 40%. 
+                            The platform was secured using OWASP-based protections against major threats like SQL injection, XSS, and CSRF, achieving a 100% prevention rate during testing. 
+                            The project also involved integrating session hardening and input sanitization workflows, which improved overall platform resilience by 30%.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">January 2025 - May 2025</span></div>
+                    </div>
+                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Phishing URL Detection Pipeline (Team Lead)</h3>
+                            <div class="subheading mb-3" style="color: #000000;">University of Dayton</div>
+                            <p style="color: #000000;">Led a 4-member team in the development of an AI-driven solution for detecting malicious URLs.
+                            Built a BERT-based phishing classifier that achieved a high detection accuracy of 92%.
+                            My role involved processing and labeling over 10,000 URLs, which streamlined data preparation and validation.
+                            I also compiled comprehensive risk analysis reports to improve model transparency and benchmarked BERT against other models (RoBERTa and DistilBERT), improving detection reliability by 15%.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">January 2025 - May 2025</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Secure Chat System using Go and Node.js</h3>
+                            <div class="subheading mb-3" style="color: #000000;">University of Dayton</div>
+                            <p style="color: #000000;">Collaborated in a 3-person team to construct a real-time, secure chat system with 100% functional uptime. 
+                            Security was paramount, incorporating AES-based encryption and rigorous user authentication.
+                            I was responsible for conducting penetration testing across six different attack vectors and implementing secure WebSocket communication with token validation, which reduced spoofing risks by 40%. 
+                            This deployment resulted in a 35% enhancement in data transmission security.
+</p>
+                        </div>                         
+                </div>
+            </section>
+            <hr class="m-0" />
+            <section class="resume-section" id="skills">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Skills <span style="font-size: 14px;">(Psst! Words from here are in the game 🎮)</span></h2>
+                    <div class="subheading mb-3" style="color: #000000;">Programming Languages & Tools</div>
+                    <ul class="list-inline dev-icons">
+                        <li class="list-inline-item" style="color: #000000;"><i class="fab fa-java"></i></li>
+                        <li class="list-inline-item" style="color: #000000;"><i class="fab fa-python"></i></li>
+                        <li class="list-inline-item" style="color: #000000;"><i class="fas fa-c"></i></li>
+                        <li class="list-inline-item" style="color: #000000;"></i>C++</li>
+                        <li class="list-inline-item" style="color: #000000;"><i class="fab fa-react"></i></li>
+                        <li class="list-inline-item" style="color: #000000;"><i class="fab fa-node-js"></i></li>
+                        <li class="list-inline-item" style="color: #000000;"><i class="fab fa-html5"></i></li>
+                        <li class="list-inline-item" style="color: #000000;"><i class="fab fa-js"></i></li>
+                        <li class="list-inline-item" style="color: #000000;"><i class="fab fa-css3-alt"></i></li>
+                        <li class="list-inline-item" style="color: #000000;"><i class="fas fa-database"></i></li>
+                    </ul>
+                    <div class="subheading mb-3" style="color: #000000;">Tools</div>
+                    <ul class="fa-ul mb-0" style="color: #000000;">
+                        <li>
+                            <span class="fa-li"><i class="fas fa-check"></i></span>
+                            Kali Linux, Wireshark, DVWA, Maltaego, MS Office, MS Word, MS Excel, Autodesk Fusion 360, Aurdino
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <section class="resume-section" id="certifications">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Certifications</h2>
+                    <ul class="fa-ul mb-0" style="color: #000000;">
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            Microsoft Certified: Azure Fundamentals
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            EX-183 Red Hat Certified Enterprise Application Developer
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            AWS Certified Solutions Architect – Associate
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            AWS Certified Cloud Practitioner 
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+        
+       <script>
+    // --- Existing Time and Word Game Scripts (Keep these as they were) ---
+
+    function startTime() {
+        document.getElementById('clock').innerHTML = new Date();
+    }
+    setInterval(startTime, 1000);
+    
+    const skillWords = ["python", "react", "kali", "html", "css", "arduino", "wireshark", "node", "fusion"];
+    let chosenWord = "";
+    let displayArray = [];
+    let guessedLetters = [];
+
+    function toggleWordGame() {
+        const box = document.getElementById("wordGameBox");
+        if (box.style.display === "none") {
+            box.style.display = "block";
+            startNewWordGame();
+        } else {
+            box.style.display = "none";
+        }
+    }
+    
+    function startNewWordGame() {
+        guessedLetters = [];
+        chosenWord = skillWords[Math.floor(Math.random() * skillWords.length)];
+        displayArray = Array(chosenWord.length).fill("_");
+        updateMaskedDisplay();
+        document.getElementById("wordMessage").innerText = "";
+        document.getElementById("letterInput").value = "";
+        document.getElementById("newWordBtn").style.display = "none";
+        document.getElementById("guessedLetters").innerText = "";
+    }
+
+    function updateMaskedDisplay() {
+        document.getElementById("maskedWord").innerText = displayArray.join(" ");
+    }
+
+    function guessLetter() {
+        const input = document.getElementById("letterInput");
+        const letter = input.value.toLowerCase();
+        input.value = "";
+
+        if (!letter || guessedLetters.includes(letter) || letter.length !== 1 || !/[a-z]/.test(letter)) return;
+
+        guessedLetters.push(letter);
+        document.getElementById("guessedLetters").innerText = "Guessed: " + guessedLetters.join(", ").toUpperCase();
+
+        let found = false;
+        for (let i = 0; i < chosenWord.length; i++) {
+            if (chosenWord[i] === letter) {
+                displayArray[i] = letter;
+                found = true;
+            }
+        }
+
+        updateMaskedDisplay();
+
+        if (displayArray.join("") === chosenWord) {
+            document.getElementById("wordMessage").innerText = `🎉 You guessed it! The word was "${chosenWord.toUpperCase()}"`;
+            document.getElementById("newWordBtn").style.display = "inline-block";
+        } else if (!found) {
+            document.getElementById("wordMessage").innerText = `❌ No "${letter.toUpperCase()}" in the word.`;
+        } else {
+            document.getElementById("wordMessage").innerText = `✅ Good! "${letter.toUpperCase()}" is correct.`;
+        }
+    }
+
+
+    // --- NEW CAT MASCOT ENHANCEMENTS AND STATE MANAGEMENT ---
+
+    const catMessages = {
+        'about': "Hi there! Welcome to my portfolio. Let's explore my journey!",
+        'education': "Let's check out my academic background and degrees!",
+        'experience': "Next, see where I've applied my skills as a Cyber Intern and Research Assistant.",
+        'projects': "Now, coming to my projects! See how I build secure systems.",
+        'skills': "This is my toolbox! Don't forget to play the word game above!",
+        'certifications': "Finally, here are my certifications. Thanks for stopping by!"
+    };
+
+    const sections = document.querySelectorAll('section.resume-section');
+    const speechBubble = document.getElementById('speech-bubble');
+    const portfolioCat = document.getElementById('portfolio-cat');
+    const catImage = portfolioCat.querySelector('img'); // Ensure this selects the <img> tag correctly
+    const pawContainer = document.getElementById('paw-print-container'); // This container should be in your HTML body
+
+    let lastSection = 'about';
+    let lastScrollY = window.scrollY;
+    let activityTimer;
+    let scrollTimeout; // To detect end of scrolling
+    const INACTIVITY_TIMEOUT_MS = 120000; // 2 minutes (120,000 milliseconds)
+    const SCROLL_STOP_DELAY_MS = 150; // Delay to confirm scroll has stopped
+    
+    // Track current cat state to avoid unnecessary image swaps
+    let currentCatState = 'idle'; // 'idle', 'moving', 'sleeping'
+
+    // --- State Management Functions ---
+
+    function setCatState(newState) {
+        if (currentCatState === newState) return; // No change needed
+
+        currentCatState = newState;
+        switch (newState) {
+            case 'idle':
+                catImage.src = 'cat-mascot.png';
+                if (catImage.src.indexOf('sleeping') === -1) { // Only restore message if not currently sleeping
+                    speechBubble.innerText = catMessages[lastSection];
+                }
+                break;
+            case 'moving':
+                catImage.src = 'cat-mascot-moving.png';
+                break;
+            case 'sleeping':
+                catImage.src = 'cat-mascot-sleeping.png';
+                speechBubble.innerText = "Zzz... Waiting for activity...";
+                break;
+        }
+    }
+
+    // --- Paw Prints ---
+
+    function createPawPrint() {
+        const paw = document.createElement('div');
+        paw.classList.add('paw-print');
+        paw.style.backgroundImage = 'url("paw-print.png")'; 
+        
+        const catRect = catImage.getBoundingClientRect();
+        const currentScrollY = window.scrollY;
+
+        // Position on the left side of the cat, slightly below its center
+        const pawLeft = catRect.left - 5; 
+        const pawTop = catRect.bottom - (catRect.height * 0.4) + currentScrollY; // Adjust paw vertical position
+        
+        paw.style.left = `${pawLeft}px`;
+        paw.style.top = `${pawTop}px`;
+        
+        // Add to the main body element (better for fixed positioning)
+        document.body.appendChild(paw); 
+
+        // Animate the opacity to make it fade out
+        setTimeout(() => {
+            paw.style.opacity = 0.5; // Make it visible briefly
+            setTimeout(() => {
+                paw.style.opacity = 0; // Start the fade out
+            }, 50); 
+            // Remove the element after the transition is complete (3000ms from CSS)
+            setTimeout(() => {
+                paw.remove();
+            }, 3050);
+        }, 10);
+    }
+    
+    // --- Scroll Handling ---
+
+    function handleScrollActivity() {
+        resetActivityTimer(); // User is active
+        
+        const currentScrollY = window.scrollY;
+        const scrollDifference = Math.abs(currentScrollY - lastScrollY);
+
+        if (scrollDifference > 0) { // If there was actual vertical movement
+            setCatState('moving');
+            
+            // Generate a paw print more frequently, but not on every single pixel scroll
+            // Only create a paw print if scrolled more than 20px
+                createPawPrint();
+                lastScrollY = currentScrollY; // Reset last scroll for paw print interval
+            
+        } else {
+            // If scrollDifference is 0, it means the scroll event fired but no actual movement.
+            // This is where scrollTimeout comes in.
+        }
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            if (currentCatState === 'moving') { // If it was moving, set to idle once scroll truly stops
+                setCatState('idle');
+            }
+        }, SCROLL_STOP_DELAY_MS);
+
+        updateCatMessage();
+    }
+
+    // --- Inactivity / Sleep Mode ---
+
+    function resetActivityTimer() {
+        clearTimeout(activityTimer);
+        // If the cat was sleeping and user becomes active, wake it up
+        if (currentCatState === 'sleeping') {
+            setCatState('idle'); // Wakes up
+            speechBubble.innerText = catMessages[lastSection]; // Restores greeting
+        }
+        activityTimer = setTimeout(putCatToSleep, INACTIVITY_TIMEOUT_MS);
+    }
+
+    function putCatToSleep() {
+        setCatState('sleeping');
+    }
+
+    // --- Message Update Logic ---
+
+    function findVisibleSection() {
+        let currentSection = 'about';
+        const scrollThreshold = 150; // Keep this consistent
+        
+        for (let i = sections.length - 1; i >= 0; i--) {
+            const section = sections[i];
+            const rect = section.getBoundingClientRect();
+            
+            if (rect.top <= scrollThreshold) {
+                currentSection = section.id;
+                break;
+            }
+        }
+        return currentSection;
+    }
+
+    function updateCatMessage() {
+        const currentSection = findVisibleSection();
+        if (currentSection !== lastSection) {
+            if (currentCatState !== 'sleeping') { // Only update if not sleeping
+                const message = catMessages[currentSection] || "Cool! Keep scrolling to see more!";
+                speechBubble.innerText = message;
+            }
+            lastSection = currentSection;
+        }
+    }
+
+    // --- Initialization and Event Listeners ---
+
+    // Listeners for general activity (resets the sleep timer)
+    window.addEventListener('scroll', handleScrollActivity); // Combined scroll and activity
+    window.addEventListener('mousemove', resetActivityTimer);
+    window.addEventListener('keydown', resetActivityTimer);
+    window.addEventListener('touchstart', resetActivityTimer); // For touch devices
+
+    // Need to ensure paw-print-container exists in HTML, or dynamically create it
+    if (!pawContainer) {
+        const newPawContainer = document.createElement('div');
+        newPawContainer.id = 'paw-print-container';
+        document.body.appendChild(newPawContainer);
+    }
+
+    // Initial setup
+    setCatState('idle'); // Start in idle state
+    resetActivityTimer(); // Start the sleep timer immediately
+    updateCatMessage(); // Set initial message
+    lastScrollY = window.scrollY; // Initialize lastScrollY
+</script>
+    </body>
+</html>
